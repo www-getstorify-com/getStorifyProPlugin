@@ -78,7 +78,10 @@ HTML;
 
                     if ($post['latitude'] !== null && $post['longitude'] !== null) {
 
-                        $GoogleAPIKey = GETSTORIFY_API_SERVICE_GOOGLE_API_KEY_WEB_KEY;
+//                        $GoogleAPIKey = GETSTORIFY_API_SERVICE_GOOGLE_API_KEY_WEB_KEY;
+
+                        $GoogleAPIKey = get_option(GETSTORIFY_PLUGIN_WP_OPTIONS_TABLE_OPTION_NAME_PLUGIN_GOOGLE_API_KEY_WEB_KEY);
+
                         $postcontenthtml = <<<HTML
 <iframe
     class="getstorify post-location getstorify" 

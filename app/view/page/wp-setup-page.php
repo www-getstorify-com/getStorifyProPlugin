@@ -47,10 +47,36 @@ HTML;
 }
 // save data: getStorify plugin credentials
 
+
+/** save data: getStorify google api key **/
+if (isset($_POST['getStorifyPluginOptions_googleApiKey_data_save'])) {
+
+    //Form data sent
+    unset($_POST['getStorifyPluginOptions_googleApiKey_data_save']);
+
+    foreach ($_POST as $key => $val) {
+        update_option($key, $val);
+    }
+
+    // output the success message
+    echo <<<HTML
+    <div class="notice notice-success is-dismissible">
+        <h2>Google API Key saved.</h2>
+        <button type="button" class="notice-dismiss">
+            <span class="screen-reader-text">Dismiss this notice.</span>
+        </button>
+    </div>
+HTML;
+
+
+}
+// save data: getStorify google api key
+
 $app_user_id = get_option(GETSTORIFY_PLUGIN_WP_OPTIONS_TABLE_OPTION_NAME_PLUGIN_USER_ID);
 $app_id = get_option(GETSTORIFY_PLUGIN_WP_OPTIONS_TABLE_OPTION_NAME_PLUGIN_APP_ID);
 $app_token = get_option(GETSTORIFY_PLUGIN_WP_OPTIONS_TABLE_OPTION_NAME_PLUGIN_APP_TOKEN);
 $app_shortcode = get_option(GETSTORIFY_PLUGIN_WP_OPTIONS_TABLE_OPTION_NAME_PLUGIN_SHORTCODE);
+$app_google_api_key = get_option(GETSTORIFY_PLUGIN_WP_OPTIONS_TABLE_OPTION_NAME_PLUGIN_GOOGLE_API_KEY_WEB_KEY);
 
 $app_isConfiguredCorrectly = false;
 
@@ -333,6 +359,44 @@ HTML;
 
     <?php if ($app_id && $app_token && $app_user_id && $app_isConfiguredCorrectly) { ?>
 
+        <div class="gtst-shortcode-form-container">
+
+            <form name="getStorifyPluginOptions_googleApiKey_form"
+                  method="post"
+                  action="<?php echo str_replace('%7E', '~', $_SERVER['REQUEST_URI']); ?>">
+
+                <h2>Connect your Google API Key</h2>
+
+                <p>Create your key from your Google Developer account and add it here.</p>
+
+                <p>
+                    <label>Google API Key:</label>
+                    <input required
+                           type="text"
+                           maxlength="1024"
+                           name="getStorifyPluginOptions_googleApiKey"
+                           id="getStorifyPluginOptions_googleApiKey"
+                           value="<?php echo $app_google_api_key; ?>">
+                </p>
+
+                <p class="submit">
+                    <input type="submit"
+                           class="gs-btn-save"
+                           name="getStorifyPluginOptions_googleApiKey_data_save"
+                           value="Save"/>
+
+
+                    <input type="reset"
+                           class="gs-btn-reset"
+                           value="Reset"
+                           onclick="window.location.reload();"/>
+                </p>
+
+            </form><!--/ .form -->
+
+        </div>
+
+        <hr>
 
         <h1>Register page where you are using the shortcode</h1>
 
