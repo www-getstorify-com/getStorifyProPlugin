@@ -33,4 +33,4 @@ This is getStorify Pro Plugin for WordPress blogs and websites.
 
 ### License
 
-MIT License
+[MIT License](https://github.com/www-getstorify-com/getstorifyProPlugin/blob/master/LICENSE)
