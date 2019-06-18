@@ -1,10 +1,14 @@
-# getstorifyProPlugin
+Date: 13-Nov-2018 Tue
+Author: Yusuf Shakeel
+File: README
+Description: This is the README file of the plugin.
+---------------------------------------------------------
 
-This is getStorify Pro Plugin for WordPress blogs and websites.
+getStorify Pro WordPress Plugin
+====================================
 
-
-### Features
-
+Features:
+------------
 * Show all your PUBLIC stories from getStorify platform on WordPress Page using the shortcode.
 
 * Show a specific story by ID.
@@ -16,11 +20,11 @@ This is getStorify Pro Plugin for WordPress blogs and websites.
 * Show gallery.
 
 
-### How to use this plugin?
-
+How to use this plugin?
+-------------------------
 1. Go to the Plugins section in the WordPress Admin Dashboard and upload this plugin.
    If you have access to the server then you can also upload the plugin files using FTP softwares (like FileZilla) inside the plugins directory.
-   ```/path/to/wp-content/plugins/```
+   /path/to/wp-content/plugins/
 
 2. Activate the plugin.
 
@@ -29,8 +33,3 @@ This is getStorify Pro Plugin for WordPress blogs and websites.
 4. Enter your User ID, App ID and App Token and click on Save button.
 
 5. You can now use the shortcode in your WordPress Page.
-
-
-### License
-
-[MIT License](https://github.com/www-getstorify-com/getstorifyProPlugin/blob/master/LICENSE)
